@@ -11,10 +11,10 @@ public class Window extends Canvas {
     public Window(Image image, int Height, int SizeM) {
         this.MultiplicationSize = SizeM;
         this.ScreenHeight = Height * this.MultiplicationSize;
-        this.ScreenWidth = this.MultiplicationSize * this.ScreenHeight * (16 / 9);
+        this.ScreenWidth = this.MultiplicationSize * this.ScreenHeight*(16/9) ;
         this.image=image;
     }
-    public void setMenu(){
+    void setMenu(){
         ramka=new JFrame("SSD");
         ramka.setIconImage(image);
         ramka.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

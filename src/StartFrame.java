@@ -6,13 +6,11 @@ public class StartFrame extends Canvas {
     private JFrame ramka;
     private  int ScreenWidth;
     private  int ScreenHeight;
-    private  int MultiplicationSize;
-    private Image image;
+    private  Integer MultiplicationSize;
     public StartFrame(Image image, int Height, int SizeM) {
         this.MultiplicationSize = SizeM;
         this.ScreenHeight = Height * this.MultiplicationSize;
-        this.ScreenWidth = this.MultiplicationSize * this.ScreenHeight * (16 / 9);
-        this.image=image;
+        this.ScreenWidth = this.MultiplicationSize * this.ScreenHeight *(16/9);
     }
 
 
@@ -20,16 +18,16 @@ public class StartFrame extends Canvas {
         super(config);
         this.ramka = ramka;
     }
-    public void setMenu(){
+    void setMenu(){
         ramka=new JFrame("SSD");
-        ramka.setIconImage(image);
+        ramka.setResizable(false);
+
         ramka.setUndecorated(true);
         ramka.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ramka.setPreferredSize(new Dimension(this.ScreenWidth,this.ScreenHeight));
         Dimension dim=Toolkit.getDefaultToolkit().getScreenSize();
         ramka.pack();
         ramka.setLocationRelativeTo(null);
-        ramka.setResizable(false);
         ramka.setVisible(true);
     }
     public JFrame getRamka() {
@@ -47,7 +45,7 @@ public class StartFrame extends Canvas {
     public  int getMultiplicationSize() {
         return MultiplicationSize;
     }
-    public void exit(){
+    void exit(){
         ramka.dispose();
     }
 
